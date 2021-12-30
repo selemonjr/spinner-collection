@@ -1,0 +1,324 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    font-family: sans-serif;
+}
+nav {
+    width:100%;
+    height:10vh;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ /* Wave Spinner */
+.center {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background:#000;
+  }
+  .wave {
+    width: 5px;
+    height: 100px;
+    background: linear-gradient(45deg, cyan, #fff);
+    margin: 10px;
+    animation: wave 1s linear infinite;
+    border-radius: 20px;
+  }
+  .wave:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .wave:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .wave:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .wave:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  .wave:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+  .wave:nth-child(7) {
+    animation-delay: 0.6s;
+  }
+  .wave:nth-child(8) {
+    animation-delay: 0.7s;
+  }
+  .wave:nth-child(9) {
+    animation-delay: 0.8s;
+  }
+  .wave:nth-child(10) {
+    animation-delay: 0.9s;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+
+
+  /* Glowing Ring Loader Animation */
+  .ring
+{
+  position:absolute;
+  top:60%;
+  left:10%;
+  transform:translate(-50%,-50%);
+  width:150px;
+  height:150px;
+  background:transparent;
+  border:3px solid #3c3c3c;
+  border-radius:50%;
+  text-align:center;
+  line-height:150px;
+  font-family:sans-serif;
+  font-size:20px;
+  color:#fff000;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  text-shadow:0 0 10px #fff000;
+  box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+.ring:before
+{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:-3px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top:3px solid #fff000;
+  border-right:3px solid #fff000;
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+span
+{
+  display:block;
+  position:absolute;
+  top:calc(50% - 2px);
+  left:50%;
+  width:50%;
+  height:4px;
+  background:transparent;
+  transform-origin:left;
+  animation:animate 2s linear infinite;
+}
+span:before
+{
+  content:'';
+  position:absolute;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#fff000;
+  top:-6px;
+  right:-8px;
+  box-shadow:0 0 20px #fff000;
+}
+@keyframes animateC
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
+}
+
+/* Trinity Spinner */
+.trinity {
+    position: absolute;
+    top: 100%;
+    left: 2%;
+}
+  
+  #container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  @keyframes animation {
+    0% {
+      stroke-dasharray: 1 98;
+      stroke-dashoffset: -105;
+    }
+    50% {
+      stroke-dasharray: 80 10;
+      stroke-dashoffset: -160;
+    }
+    100% {
+      stroke-dasharray: 1 98;
+      stroke-dashoffset: -300;
+    }
+  }
+  
+  #spinner {
+    transform-origin: center;
+    animation-name: animation;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier;
+    animation-iteration-count: infinite;
+  }
+
+
+
+
+  /* Blue Spinner */
+
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    animation-name: beesandbombs;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
+  }
+  .loading .circle {
+    position: relative;
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 10px;
+    float: right;
+    animation-name: beesandbombscircle;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
+  }
+  .loading .circle:before {
+    content: "";
+    position: absolute;
+    background: #2980b9;
+    width: 50px;
+    height: 50px;
+    animation-name: beesandbombscirclebox;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
+  }
+  .loading .circle:nth-child(1)::before {
+    left: 0;
+    bottom: 0;
+    border-bottom-left-radius: 40px;
+  }
+  .loading .circle:nth-child(2)::before {
+    right: 0;
+    bottom: 0;
+    border-bottom-right-radius: 40px;
+  }
+  .loading .circle:nth-child(3)::before {
+    top: 0;
+    left: 0;
+    border-top-left-radius: 40px;
+  }
+  .loading .circle:nth-child(4)::before {
+    top: 0;
+    right: 0;
+    border-top-right-radius: 40px;
+  }
+  .loading:before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #2980b9;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    animation-name: beesandbombsrev;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.82, 0.01, 0.15, 1.01);
+  }
+  @keyframes beesandbombs {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+  @keyframes beesandbombsrev {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+    52% {
+      visibility: hidden;
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+      visibility: hidden;
+    }
+  }
+  @keyframes beesandbombscircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes beesandbombscirclebox {
+    0% {
+      visibility: hidden;
+    }
+    50% {
+      visibility: hidden;
+    }
+    51% {
+      visibility: visible;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
+
+  
